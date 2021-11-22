@@ -1,0 +1,9 @@
+<div class="item-wrapper">
+  <p class="item-date">{{item?.Date | date : 'EEEE'}}</p>
+  <div class="item-image" [appImageUrl]="item?.Day?.Icon || 0"></div>
+  <app-temperature [type]="item?.Temperature?.Maximum?.Unit" [value]="item?.Temperature?.Maximum?.Value"></app-temperature>
+
+  <div class="item-image" [appImageUrl]="item?.Night?.Icon || 0"></div>
+  <app-temperature [type]="item?.Temperature?.Minimum?.Unit" [value]="item?.Temperature?.Minimum?.Value"></app-temperature>
+
+</div>

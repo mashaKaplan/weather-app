@@ -1,0 +1,22 @@
+.header-wrapper {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+}
+
+.active-link {
+  font-weight: bolder;
+  font-size: 18px;
+  color: rgb(223,211,199);
+}
+
+a {
+  font-size: 16px;
+  text-decoration: none;
+  padding-left: 15px;
+  color: rgb(86,141,138);
+}
+
+a:hover:not(.active-link) {
+  text-decoration: underline rgb(86,141,138) !important;
+}

@@ -1,0 +1,8 @@
+<div *ngIf="mainSvc.currentLocationWeather$ | async as currentLocationWeather" class="local-wrapper">
+  <div class="local-image" [appImageUrl]="currentLocationWeather.currentTempIcon || 0"></div>
+
+  <div >
+    <p class="city">{{currentLocationWeather.city}}</p>
+    <app-temperature [type]="currentLocationWeather.currentTempType" [value]="currentLocationWeather?.currentTempValue"></app-temperature>
+  </div>
+</div>

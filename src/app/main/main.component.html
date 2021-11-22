@@ -1,0 +1,32 @@
+<div class="main-container">
+  <div class="search">
+    <mat-form-field appearance="standard">
+      <input type="text"
+             placeholder="Search..."
+             matInput
+             [formControl]="searchCtrl"
+             [matAutocomplete]="auto">
+      <mat-icon matSuffix>search</mat-icon>
+      <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn" (optionSelected)="selectLocation($event)">
+        <mat-option *ngFor="let option of searchList$ | async" [value]="option">
+          {{option?.LocalizedName}}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+  </div>
+
+  <div class="weather-wrapper" *ngIf="mainSvc.currentLocationWeather$ | async as currentLocationWeather">
+    <div class="weather-top">
+      <app-local></app-local>
+      <button mat-mini-fab (click)="mainSvc.toggleFavorite()" matTooltip="{{currentLocationWeather?.isFavorite ? 'Remove from favorites' : 'Add to favorites'}}">
+        <mat-icon>{{currentLocationWeather?.isFavorite ? 'favorite' : 'favorite_border'}}</mat-icon>
+      </button>
+    </div>
+
+    <p class="weather-description">{{currentLocationWeather.currentTempDescription}}</p>
+
+    <div class="items-wrapper">
+      <app-main-item *ngFor="let item of mainSvc.local5daysWeather$ | async" [item]="item"></app-main-item>
+    </div>
+  </div>
+</div>

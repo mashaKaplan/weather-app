@@ -1,0 +1,25 @@
+.local {
+  &-image {
+    width: 100px;
+    height: 100px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  &-wrapper{
+    display: flex;
+    align-items: center;
+  }
+  &-city {
+
+  }
+  &-temp{}
+}
+
+@media all and (max-width: 400px){
+  .local {
+    &-wrapper {
+      flex-flow: column;
+    }
+  }
+}

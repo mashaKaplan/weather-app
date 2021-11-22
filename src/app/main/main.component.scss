@@ -1,0 +1,42 @@
+.main-container {
+  display: flex;
+  flex-flow: column;
+  padding: 2% 10%;
+  align-items: center;
+}
+
+.items-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.search {
+  width: 300px;
+  display: flex;
+  justify-content: center;
+
+  mat-form-field {
+    width: 100%;
+  }
+}
+
+.weather {
+  &-top {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &-wrapper {
+    width: 100%;
+  }
+
+  &-description {
+    font-weight: bold;
+    font-size: 48px;
+    text-align: center;
+    color: #568d8a;
+    padding: 40px 0;
+  }
+}

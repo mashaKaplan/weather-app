@@ -1,0 +1,12 @@
+<div class="wrapper" *ngIf="(mainSvc.favoriteLocations$ | async) as favorites">
+  <div *ngIf="favorites.length; else empty" style="display: flex;">
+    <app-favorite-item style="padding: 5px" *ngFor="let item of favorites" [item]="item"></app-favorite-item>
+  </div>
+
+  <ng-template #empty>
+    <div class="empty">
+      <p>There are no favorite places</p>
+      <p>Go to <a [routerLink]="'/main'">Main Page</a> to add your first favourite location</p>
+    </div>
+  </ng-template>
+</div>

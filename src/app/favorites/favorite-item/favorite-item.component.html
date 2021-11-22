@@ -1,0 +1,6 @@
+<div class="container" *ngIf="item && item.currentTempValue" (click)="goToLocation()">
+  <p class="city">{{item.city}}</p>
+  <app-temperature [value]="item.currentTempValue" [type]="item.currentTempType"></app-temperature>
+  <p class="weather">{{item.currentTempDescription}}</p>
+  <div class="image" [appImageUrl]="item?.currentTempIcon || 0"></div>
+</div>
